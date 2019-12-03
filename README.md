@@ -9,13 +9,15 @@ From root directoy
 python3 main.py
 ```
 
-To run tests
+Tests
+-----
 ```shell
 pip install -r requirements.txt
 pytest
 ```
 
-Interface works as specified in challange
+Workflow
+--------
 ```python
 checkout = Checkout(pricing_rules=pricing_rules)
 checkout.add('VOUCHER')

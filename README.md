@@ -1,20 +1,5 @@
-# shoppingBasket
- a simple checkout server and client that communicate over the network.
-
-1. Creating products `Product(code='VOUCHER', name='Cabify Voucher', price=5.0)`
-2. `FixedPriceRule(product=mug_product)` for fixed price products.
-3. `MultiDiscountRule(product=voucher_product, quantity_multiplier=2, discount_precentage=50)` for 2 for 1 rule. `quantity_multiplier` is for definding the quantity on which to start applying the discount. `discount_precentage` is the discount precentage to apply. E.g: 50%
-4. `BulkDiscountRule(product=tshirt_product, min_quantity=3, discount_precentage=5)` for bulk rule. `min_quantity` define quantity to start applying discount from (inclusive). `discount_precentage` is the discount precentage to apply. E.g: 5%
-
-
-Interface works as specified in challange
-```python
-checkout = Checkout(pricing_rules=pricing_rules)
-checkout.add('VOUCHER')
-checkout.add('TSHIRT')
-checkout.add('MUG')
-price = checkout.get_total()
-```
+# shoppingCart
+ a simple shopping cart application.
 
 Running
 -------
@@ -29,6 +14,22 @@ To run tests
 pip install -r requirements.txt
 pytest
 ```
+
+Interface works as specified in challange
+```python
+checkout = Checkout(pricing_rules=pricing_rules)
+checkout.add('VOUCHER')
+checkout.add('TSHIRT')
+checkout.add('MUG')
+price = checkout.get_total()
+```
+
+How it works
+-----------
+1. Creating products `Product(code='VOUCHER', name='Voucher', price=5.0)`
+2. `FixedPriceRule(product=mug_product)` for fixed price products.
+3. `MultiDiscountRule(product=voucher_product, quantity_multiplier=2, discount_precentage=50)` for 2 for 1 rule. `quantity_multiplier` is for definding the quantity on which to start applying the discount. `discount_precentage` is the discount precentage to apply. E.g: 50%
+4. `BulkDiscountRule(product=tshirt_product, min_quantity=3, discount_precentage=5)` for bulk rule. `min_quantity` define quantity to start applying discount from (inclusive). `discount_precentage` is the discount precentage to apply. E.g: 5%
 
 
 Assumptions and implements

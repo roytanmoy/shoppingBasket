@@ -1,8 +1,8 @@
-from .basket import Basket
+from ..product import Product
 
 
 class Rule:
-    def __init__(self, product: Basket):
+    def __init__(self, product: Product):
         self.product = product
 
 
